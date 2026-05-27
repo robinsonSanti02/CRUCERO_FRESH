@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crucero Fresh | Restaurant Cevichería</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+
+    <nav class="navbar">
+        <div class="logo-box">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Crucero Fresh">
+            <div>
+                <h1>Crucero Fresh</h1>
+                <p>Restaurant Cevichería</p>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#menu">Carta</a>
+            <a href="#especial">Especial</a>
+            <a href="#carrito">Carrito</a>
+        </div>
+    </nav>
+
+    <section class="hero-content">
+        <span class="etiqueta">🌊 Sabor marino peruano</span>
+        <h2>El lugar ideal para toda la familia</h2>
+        <p>Ceviches, mariscos, rondas marinas y platos criollos preparados con frescura, sabor y pasión.</p>
+
+        <div class="hero-buttons">
+            <a href="#menu" class="btn btn-primary">Ver carta</a>
+            <a href="#carrito" class="btn btn-secondary">Hacer pedido</a>
+        </div>
+    </section>
+</header>
+
+<main>
+
+<section class="intro">
+    <span>⚓ Bienvenido</span>
+    <h2>Nuestra carta marina</h2>
+    <p>Disfruta una experiencia fresca, familiar y llena de sabor con los mejores platos de Crucero Fresh.</p>
+</section>
+
+<section id="menu" class="menu">
+    <h2>🔥 Platos destacados</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/ceviche.jpg') }}" alt="Ceviche de pescado">
+            <div class="card-body">
+                <span>Cevichazos</span>
+                <h3>Ceviche de Pescado</h3>
+                <p>Pescado fresco marinado en limón peruano, acompañado de camote y choclo.</p>
+                <div class="price-row">
+                    <b>S/30</b>
+                    <button onclick="agregarCarrito('Ceviche de Pescado', 30)">Agregar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/mixto.jpg') }}" alt="Ceviche mixto">
+            <div class="card-body">
+                <span>Cevichazos</span>
+                <h3>Ceviche Mixto</h3>
+                <p>Deliciosa combinación de pescado y mariscos con sazón marina.</p>
+                <div class="price-row">
+                    <b>S/38</b>
+                    <button onclick="agregarCarrito('Ceviche Mixto', 38)">Agregar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/jalea.jpg') }}" alt="Jalea mixta">
+            <div class="card-body">
+                <span>Calientitos</span>
+                <h3>Jalea Mixta</h3>
+                <p>Mariscos fritos crocantes, acompañados de salsa criolla y yucas doradas.</p>
+                <div class="price-row">
+                    <b>S/38</b>
+                    <button onclick="agregarCarrito('Jalea Mixta', 38)">Agregar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/arroz.jpg') }}" alt="Arroz con mariscos">
+            <div class="card-body">
+                <span>Arroces</span>
+                <h3>Arroz con Mariscos</h3>
+                <p>Arroz jugoso con mariscos, especias y el toque especial de la casa.</p>
+                <div class="price-row">
+                    <b>S/30</b>
+                    <button onclick="agregarCarrito('Arroz con Mariscos', 30)">Agregar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/chaufa.jpg') }}" alt="Chaufa de mariscos">
+            <div class="card-body">
+                <span>Chaufas</span>
+                <h3>Chaufa de Mariscos</h3>
+                <p>Chaufa estilo oriental con mariscos frescos y aroma salteado.</p>
+                <div class="price-row">
+                    <b>S/30</b>
+                    <button onclick="agregarCarrito('Chaufa de Mariscos', 30)">Agregar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="{{ url_for('static', filename='img/tiradito.jpg') }}" alt="Tiradito">
+            <div class="card-body">
+                <span>Tiraditos</span>
+                <h3>Tiradito Rico Perú</h3>
+                <p>Finos cortes de pescado bañados en crema especial de la casa.</p>
+                <div class="price-row">
+                    <b>S/35</b>
+                    <button onclick="agregarCarrito('Tiradito Rico Perú', 35)">Agregar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="especial" class="especial">
+    <div class="especial-info">
+        <span>⭐ Especialidad de la casa</span>
+        <h2>Ronda Marina Familiar</h2>
+        <p>Causa acevichada, ceviche, chicharrón mixto, arroz con mariscos y chaufa de mariscos. Ideal para compartir.</p>
+        <h3>S/60</h3>
+        <button onclick="agregarCarrito('Ronda Marina Familiar', 60)">Agregar al carrito</button>
+    </div>
+
+    <img src="{{ url_for('static', filename='img/ronda.jpg') }}" alt="Ronda marina">
+</section>
+
+<section class="leche">
+    <img src="{{ url_for('static', filename='img/leche.jpg') }}" alt="Leche de tigre">
+
+    <div>
+        <span>🥛 Favorito del público</span>
+        <h2>Leche de Tigre</h2>
+        <p>Concentrado marino con sabor intenso, fresco y con toque picante.</p>
+        <h3>S/18</h3>
+        <button onclick="agregarCarrito('Leche de Tigre', 18)">Agregar al carrito</button>
+    </div>
+</section>
+
+<section class="carta-completa">
+    <h2>📋 Carta completa</h2>
+
+    <div class="lista-menu">
+        <div><span>Ceviche Carretillero</span><b>S/30</b><button onclick="agregarCarrito('Ceviche Carretillero', 30)">+</button></div>
+        <div><span>Ceviche Chiclayano</span><b>S/35</b><button onclick="agregarCarrito('Ceviche Chiclayano', 35)">+</button></div>
+        <div><span>Ceviche de Conchas Negras</span><b>S/40</b><button onclick="agregarCarrito('Ceviche de Conchas Negras', 40)">+</button></div>
+        <div><span>Causa Acevichada</span><b>S/25</b><button onclick="agregarCarrito('Causa Acevichada', 25)">+</button></div>
+        <div><span>Chicharrón de Pescado</span><b>S/35</b><button onclick="agregarCarrito('Chicharrón de Pescado', 35)">+</button></div>
+        <div><span>Chicharrón de Calamar</span><b>S/45</b><button onclick="agregarCarrito('Chicharrón de Calamar', 45)">+</button></div>
+        <div><span>Jalea Imperial Familiar</span><b>S/75</b><button onclick="agregarCarrito('Jalea Imperial Familiar', 75)">+</button></div>
+        <div><span>Chaufa de Langostinos</span><b>S/35</b><button onclick="agregarCarrito('Chaufa de Langostinos', 35)">+</button></div>
+    </div>
+</section>
+
+<section id="carrito" class="carrito">
+    <div class="carrito-top">
+        <div>
+            <span>Pedido online</span>
+            <h2>🛒 Tu pedido</h2>
+            <p>Agrega tus platos favoritos y envía el pedido por WhatsApp.</p>
+        </div>
+    </div>
+
+    <div id="items-carrito" class="items-carrito">
+        <p class="vacio">Tu carrito está vacío.</p>
+    </div>
+
+    <div class="total-box">
+        <h3>Total</h3>
+        <strong>S/<span id="total">0</span></strong>
+    </div>
+
+    <button class="btn-whatsapp" onclick="enviarWhatsApp()">
+        Enviar pedido por WhatsApp
+    </button>
+</section>
+
+</main>
+
+<a href="#carrito" class="floating-cart">🛒</a>
+
+<footer>
+    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Crucero Fresh">
+    <h2>Crucero Fresh</h2>
+    <p>Restaurant Cevichería | El lugar ideal para toda la familia</p>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
